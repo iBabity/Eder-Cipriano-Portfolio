@@ -1,26 +1,36 @@
 const projects = [
   {
     index: "01",
-    title: "Calculadora de Rentabilidade",
-    description: "Aplicativo em Flutter para analisar rendimento de carcaças, custo real por corte, margens, perdas e rentabilidade operacional.",
-    tech: ["Flutter", "Dart", "Análise de dados"],
-    url: "https://github.com/iBabity/calculadora_rentabilidade",
+    title: "Monalisa Financeiro",
+    description: "Sistema financeiro para Windows com contas a pagar e receber, conciliação por OFX, gestão multiempresa, relatórios e controle de acesso.",
+    tech: ["Flutter", "C# / .NET", "SQLite", "Windows"],
+    linkLabel: "Projeto privado",
     featured: true,
   },
   {
     index: "02",
-    title: "Site Expositório",
-    description: "Experiência web para estética e biomedicina com autenticação local, protocolos em destaque e agendamento de avaliações.",
-    tech: ["JavaScript", "CSS", "LocalStorage"],
-    url: "https://github.com/iBabity/Site-Expositorio",
+    title: "Ronda Compras",
+    description: "Aplicativo de rondas para registrar e acompanhar solicitações de compra, com operação móvel e integração ao ecossistema Gestores.",
+    tech: ["Flutter", "Dart", "PostgreSQL", "Mobile"],
+    linkLabel: "Projeto privado",
     featured: false,
   },
   {
     index: "03",
-    title: "API de Bolsas de Estudo",
-    description: "Backend para consulta de ofertas com filtros, busca, ordenação, paginação e seleção de propriedades.",
-    tech: ["Node.js", "Express", "JSON"],
-    url: "https://github.com/iBabity/DesafioDeBackEnd-QueroEducacao",
+    title: "Calculadora de Rentabilidade",
+    description: "Aplicativo em Flutter para analisar rendimento de carcaças, custo real por corte, margens, perdas e rentabilidade operacional.",
+    tech: ["Flutter", "Dart", "Análise de dados"],
+    url: "https://github.com/iBabity/calculadora_rentabilidade",
+    linkLabel: "Ver repositório ↗",
+    featured: false,
+  },
+  {
+    index: "04",
+    title: "Site Expositório",
+    description: "Experiência web para estética e biomedicina com autenticação local, protocolos em destaque e agendamento de avaliações.",
+    tech: ["JavaScript", "CSS", "LocalStorage"],
+    url: "https://github.com/iBabity/Site-Expositorio",
+    linkLabel: "Ver repositório ↗",
     featured: false,
   },
 ];
@@ -59,13 +69,19 @@ export default function Home() {
     </section>
 
     <section className="projects" id="projetos">
-      <div className="sectionHead"><div><span className="sectionNumber">01 / PORTFÓLIO</span><h2>Projetos que transformam<br />problemas em <em>produto.</em></h2></div><p>Uma seleção de aplicações e estudos publicados no meu GitHub.</p></div>
-      <div className="projectGrid">{projects.map(project => <a className={"projectCard" + (project.featured ? " featured" : "")} href={project.url} target="_blank" rel="noreferrer" key={project.title}>
-        <div className="projectTop"><span>{project.index}</span><span>Ver repositório ↗</span></div>
-        <div><h3>{project.title}</h3><p>{project.description}</p></div>
-        <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
-      </a>)}</div>
-      <a className="allProjects" href="https://github.com/iBabity?tab=repositories" target="_blank" rel="noreferrer">Explorar todos os 7 repositórios <span>↗</span></a>
+      <div className="sectionHead"><div><span className="sectionNumber">01 / PORTFÓLIO</span><h2>Projetos que transformam<br />problemas em <em>produto.</em></h2></div><p>Aplicações em produção, soluções internas e estudos publicados no meu GitHub.</p></div>
+      <div className="projectGrid">{projects.map(project => {
+        const content = <>
+          <div className="projectTop"><span>{project.index}</span><span>{project.linkLabel}</span></div>
+          <div><h3>{project.title}</h3><p>{project.description}</p></div>
+          <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
+        </>;
+
+        return project.url
+          ? <a className={"projectCard" + (project.featured ? " featured" : "")} href={project.url} target="_blank" rel="noreferrer" key={project.title}>{content}</a>
+          : <article className={"projectCard" + (project.featured ? " featured" : "")} key={project.title}>{content}</article>;
+      })}</div>
+      <a className="allProjects" href="https://github.com/iBabity?tab=repositories" target="_blank" rel="noreferrer">Explorar projetos públicos no GitHub <span>↗</span></a>
     </section>
 
     <section className="experience" id="experiencia">
