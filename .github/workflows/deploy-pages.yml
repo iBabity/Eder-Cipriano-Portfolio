@@ -33,7 +33,7 @@ jobs:
           cache: pnpm
 
       - name: Instalar dependências
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Gerar versão estática
         run: pnpm exec vite build --config vite.github-pages.config.ts
