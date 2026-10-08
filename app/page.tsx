@@ -96,7 +96,6 @@ export default function Home() {
 
     <footer id="contato">
       <span className="sectionNumber">04 / CONTATO</span>
-      <h2>Vamos construir<br /><em>algo relevante?</em></h2>
       <div className="contactRow"><a href="mailto:eder.cipriano97@gmail.com">eder.cipriano97@gmail.com ↗</a><a href="tel:+5519978096565">(19) 97809-6565</a></div>
       <div className="footerBottom"><span>© 2026 Eder Cipriano Neto</span><div><a href="https://github.com/iBabity" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ibabityy/" target="_blank" rel="noreferrer">LinkedIn</a></div><a href="#top">Voltar ao topo ↑</a></div>
     </footer>
