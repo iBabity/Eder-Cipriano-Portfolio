@@ -81,7 +81,7 @@ export default function Home() {
       <div className="projectGrid">{projects.map(project => {
         const content = <>
           <div className="projectTop"><span>{project.index}</span><span>{project.linkLabel}</span></div>
-          <div className={`projectVisual projectVisual${project.index}`}><img src={project.image} alt={project.imageAlt} loading="lazy" /></div>
+          <div className={`projectVisual projectVisual${project.index}`}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.index === "01" ? { width: "100%", height: "100%", objectFit: "cover" } : undefined} /></div>
           <div><h3>{project.title}</h3><p>{project.description}</p></div>
           <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
         </>;
