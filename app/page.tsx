@@ -4,6 +4,8 @@ const projects = [
     title: "Monalisa Financeiro",
     description: "Sistema financeiro para Windows com contas a pagar e receber, conciliação por OFX, gestão multiempresa, relatórios e controle de acesso.",
     tech: ["Flutter", "C# / .NET", "SQLite", "Windows"],
+    image: "projects/monalisa-financeiro.jpg",
+    imageAlt: "Ícone do Monalisa Financeiro",
     linkLabel: "Projeto privado",
     featured: true,
   },
@@ -12,6 +14,8 @@ const projects = [
     title: "Ronda Compras",
     description: "Aplicativo de rondas para registrar e acompanhar solicitações de compra, com operação móvel e integração ao ecossistema Gestores.",
     tech: ["Flutter", "Dart", "PostgreSQL", "Mobile"],
+    image: "projects/ronda-compras.jpg",
+    imageAlt: "Identidade visual do aplicativo Ronda Compras",
     linkLabel: "Projeto privado",
     featured: false,
   },
@@ -20,6 +24,8 @@ const projects = [
     title: "Calculadora de Rentabilidade",
     description: "Aplicativo em Flutter para analisar rendimento de carcaças, custo real por corte, margens, perdas e rentabilidade operacional.",
     tech: ["Flutter", "Dart", "Análise de dados"],
+    image: "projects/calculadora-rentabilidade.jpg",
+    imageAlt: "Ícone do aplicativo Calculadora de Rentabilidade",
     url: "https://github.com/iBabity/calculadora_rentabilidade",
     linkLabel: "Ver repositório ↗",
     featured: false,
@@ -29,6 +35,8 @@ const projects = [
     title: "Site Expositório",
     description: "Experiência web para estética e biomedicina com autenticação local, protocolos em destaque e agendamento de avaliações.",
     tech: ["JavaScript", "CSS", "LocalStorage"],
+    image: "projects/site-expositorio.png",
+    imageAlt: "Identidade visual de Luciene Ribeiro Biomedicina Esteta",
     url: "https://github.com/iBabity/Site-Expositorio",
     linkLabel: "Ver repositório ↗",
     featured: false,
@@ -73,6 +81,7 @@ export default function Home() {
       <div className="projectGrid">{projects.map(project => {
         const content = <>
           <div className="projectTop"><span>{project.index}</span><span>{project.linkLabel}</span></div>
+          <div className={`projectVisual projectVisual${project.index}`}><img src={project.image} alt={project.imageAlt} loading="lazy" /></div>
           <div><h3>{project.title}</h3><p>{project.description}</p></div>
           <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
         </>;
