@@ -24,8 +24,8 @@ const projects = [
     title: "Calculadora de Rentabilidade",
     description: "Aplicativo em Flutter para analisar rendimento de carcaças, custo real por corte, margens, perdas e rentabilidade operacional.",
     tech: ["Flutter", "Dart", "Análise de dados"],
-    image: "projects/calculadora-rentabilidade.jpg",
-    imageAlt: "Ícone do aplicativo Calculadora de Rentabilidade",
+    image: null,
+    imageAlt: "",
     url: "https://github.com/iBabity/calculadora_rentabilidade",
     linkLabel: "Ver repositório ↗",
     featured: false,
@@ -33,12 +33,12 @@ const projects = [
   {
     index: "04",
     title: "Site Expositório",
-    description: "Experiência web para estética e biomedicina com autenticação local, protocolos em destaque e agendamento de avaliações.",
+    description: "Site institucional responsivo, desenvolvido para apresentar serviços, fortalecer a presença digital e facilitar o contato com visitantes.",
     tech: ["JavaScript", "CSS", "LocalStorage"],
     image: "projects/site-expositorio.png",
     imageAlt: "Identidade visual de Luciene Ribeiro Biomedicina Esteta",
-    url: "https://github.com/iBabity/Site-Expositorio",
-    linkLabel: "Ver repositório ↗",
+    url: "https://lucieneesteticasjc.com.br/",
+    linkLabel: "Visitar site ↗",
     featured: false,
   },
 ];
@@ -81,7 +81,7 @@ export default function Home() {
       <div className="projectGrid">{projects.map(project => {
         const content = <>
           <div className="projectTop"><span>{project.index}</span><span>{project.linkLabel}</span></div>
-          <div className={`projectVisual projectVisual${project.index}`}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.index === "01" ? { width: "100%", height: "100%", objectFit: "cover" } : undefined} /></div>
+          {project.image && <div className={`projectVisual projectVisual${project.index}`}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.index === "01" ? { width: "100%", height: "100%", objectFit: "cover" } : undefined} /></div>}
           <div><h3>{project.title}</h3><p>{project.description}</p></div>
           <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
         </>;
