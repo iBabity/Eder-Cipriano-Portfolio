@@ -11,27 +11,38 @@ const projects = [
   },
   {
     index: "02",
-    title: "Ronda Compras",
-    description: "Aplicativo de rondas para registrar e acompanhar solicitações de compra, com operação móvel e integração ao ecossistema Gestores.",
-    tech: ["Flutter", "Dart", "PostgreSQL", "Mobile"],
-    image: "projects/ronda-compras.jpg",
-    imageAlt: "Identidade visual do aplicativo Ronda Compras",
-    linkLabel: "Projeto privado",
+    title: "Órbita Calendar",
+    description: "Gerenciador de agendas para reunir compromissos do Google Calendar e agendas próprias, mantendo trabalho, estudos e vida pessoal organizados em espaços separados.",
+    tech: ["TypeScript", "React", "Cloudflare Workers", "D1"],
+    image: "projects/orbita-calendar-real.png",
+    imageAlt: "Tela pública do Órbita Calendar",
+    url: "https://github.com/iBabity/orbita-calendar",
+    linkLabel: "Ver repositório ↗",
     featured: false,
   },
   {
     index: "03",
+    title: "Ronda Compras",
+    description: "Aplicativo de rondas para registrar e acompanhar solicitações de compra, com operação móvel e integração ao ecossistema Gestores.",
+    tech: ["Flutter", "Dart", "PostgreSQL", "Mobile"],
+    image: "projects/ronda-compras-v2.png",
+    imageAlt: "Profissional conferindo etiquetas e produtos em um supermercado",
+    linkLabel: "Projeto privado",
+    featured: false,
+  },
+  {
+    index: "04",
     title: "Calculadora de Rentabilidade",
     description: "Aplicativo em Flutter para analisar rendimento de carcaças, custo real por corte, margens, perdas e rentabilidade operacional.",
     tech: ["Flutter", "Dart", "Análise de dados"],
-    image: null,
-    imageAlt: "",
+    image: "projects/calculadora-rentabilidade-v2.png",
+    imageAlt: "Aplicativo móvel de análise de rendimento, custos e rentabilidade",
     url: "https://github.com/iBabity/calculadora_rentabilidade",
     linkLabel: "Ver repositório ↗",
     featured: false,
   },
   {
-    index: "04",
+    index: "05",
     title: "Site Expositório",
     description: "Site institucional responsivo, desenvolvido para apresentar serviços, fortalecer a presença digital e facilitar o contato com visitantes.",
     tech: ["JavaScript", "CSS", "LocalStorage"],
@@ -39,17 +50,6 @@ const projects = [
     imageAlt: "Identidade visual de Luciene Ribeiro Biomedicina Esteta",
     url: "https://lucieneesteticasjc.com.br/",
     linkLabel: "Visitar site ↗",
-    featured: false,
-  },
-  {
-    index: "05",
-    title: "Órbita Calendar",
-    description: "Gerenciador de agendas para reunir compromissos do Google Calendar e agendas próprias, mantendo trabalho, estudos e vida pessoal organizados em espaços separados.",
-    tech: ["TypeScript", "React", "Cloudflare Workers", "D1"],
-    image: "projects/orbita-calendar.png",
-    imageAlt: "Ícone do Órbita Calendar",
-    url: "https://github.com/iBabity/orbita-calendar",
-    linkLabel: "Ver repositório ↗",
     featured: false,
   },
 ];
@@ -92,7 +92,7 @@ export default function Home() {
       <div className="projectGrid">{projects.map(project => {
         const content = <>
           <div className="projectTop"><span>{project.index}</span><span>{project.linkLabel}</span></div>
-          {project.image && <div className={`projectVisual projectVisual${project.index}`}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.index === "01" ? { width: "100%", height: "100%", objectFit: "cover" } : undefined} /></div>}
+          {project.image && <div className="projectVisual" style={project.index === "01" ? { height: "300px" } : undefined}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.title === "Site Expositório" ? undefined : { width: "100%", height: "100%", objectFit: "cover" }} /></div>}
           <div><h3>{project.title}</h3><p>{project.description}</p></div>
           <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
         </>;
