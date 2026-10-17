@@ -41,6 +41,17 @@ const projects = [
     linkLabel: "Visitar site ↗",
     featured: false,
   },
+  {
+    index: "05",
+    title: "Órbita Calendar",
+    description: "Gerenciador de agendas para reunir compromissos do Google Calendar e agendas próprias, mantendo trabalho, estudos e vida pessoal organizados em espaços separados.",
+    tech: ["TypeScript", "React", "Cloudflare Workers", "D1"],
+    image: "projects/orbita-calendar.png",
+    imageAlt: "Ícone do Órbita Calendar",
+    url: "https://github.com/iBabity/orbita-calendar",
+    linkLabel: "Ver repositório ↗",
+    featured: false,
+  },
 ];
 
 const experience = [
