@@ -14,8 +14,8 @@ const projects = [
     title: "Órbita Calendar",
     description: "Gerenciador de agendas para reunir compromissos do Google Calendar e agendas próprias, mantendo trabalho, estudos e vida pessoal organizados em espaços separados.",
     tech: ["TypeScript", "React", "Cloudflare Workers", "D1"],
-    image: "projects/orbita-calendar-real.png",
-    imageAlt: "Tela pública do Órbita Calendar",
+    image: "projects/orbita-calendar-app.png",
+    imageAlt: "Tela semanal do aplicativo Órbita Calendar",
     url: "https://github.com/iBabity/orbita-calendar",
     linkLabel: "Ver repositório ↗",
     featured: false,
@@ -55,9 +55,11 @@ const projects = [
 ];
 
 const experience = [
-  { date: "2025 — agora", role: "Analista de Sistemas", company: "Monalisa Sistemas", text: "Análise de sistemas, suporte técnico, treinamentos, novas funcionalidades e otimização de bancos de dados." },
-  { date: "2024 — 2025", role: "Analista de Suporte Jr.", company: "Neo Company", text: "Suporte a clientes, infraestrutura de software, manutenção e atendimento remoto." },
+  { date: "Aos 15 anos", role: "Primeiro trabalho", company: "Comércio de autopeças", text: "Comecei vendendo peças de carro para ajudar meus pais. Foi ali que aprendi cedo sobre responsabilidade, atendimento e o valor de construir meu próprio caminho." },
+  { date: "Início na área", role: "Estagiário de TI", company: "Prefeitura de São José dos Campos", text: "Meu interesse por tecnologia e sistemas virou profissão quando conquistei uma oportunidade de estágio e passei a viver, na prática, a rotina da área de TI." },
   { date: "2021 — 2024", role: "Técnico de TI", company: "Sphere International School", text: "Suporte a usuários, redes LAN/WAN, manutenção, inventário e implantação de equipamentos." },
+  { date: "2024 — 2025", role: "Analista de Suporte Jr.", company: "Neo Company", text: "Suporte a clientes, infraestrutura de software, manutenção e atendimento remoto." },
+  { date: "2025 — agora", role: "Analista de Sistemas", company: "Monalisa Sistemas", text: "Análise de sistemas, suporte técnico, treinamentos, novas funcionalidades e otimização de bancos de dados." },
 ];
 
 export default function Home() {
@@ -92,7 +94,7 @@ export default function Home() {
       <div className="projectGrid">{projects.map(project => {
         const content = <>
           <div className="projectTop"><span>{project.index}</span><span>{project.linkLabel}</span></div>
-          {project.image && <div className="projectVisual" style={project.index === "01" ? { height: "300px" } : undefined}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.title === "Site Expositório" ? undefined : { width: "100%", height: "100%", objectFit: "cover" }} /></div>}
+          {project.image && <div className="projectVisual" style={project.index === "01" ? { height: "300px" } : project.title === "Site Expositório" ? { background: "#f3e9ed" } : undefined}><img src={project.image} alt={project.imageAlt} loading="lazy" style={project.title === "Site Expositório" ? { width: "72%", height: "72%", objectFit: "contain" } : project.title === "Órbita Calendar" ? { width: "100%", height: "100%", objectFit: "contain" } : { width: "100%", height: "100%", objectFit: "cover" }} /></div>}
           <div><h3>{project.title}</h3><p>{project.description}</p></div>
           <div className="techList">{project.tech.map(item => <span key={item}>{item}</span>)}</div>
         </>;
@@ -105,7 +107,7 @@ export default function Home() {
     </section>
 
     <section className="experience" id="experiencia">
-      <div className="sectionHead light"><div><span className="sectionNumber">02 / TRAJETÓRIA</span><h2>Experiência que conecta<br />tecnologia e <em>pessoas.</em></h2></div></div>
+      <div className="trajectoryIntro"><span className="sectionNumber">02 / TRAJETÓRIA</span><p>Comecei a trabalhar aos 15 anos, vendendo peças de carro para ajudar meus pais. Nesse caminho, fui descobrindo meu interesse por tecnologia e sistemas. Minha entrada na área aconteceu como estagiário na Prefeitura de São José dos Campos; depois, cresci como técnico de TI e segui evoluindo até me tornar Analista de Sistemas.</p></div>
       <div className="timeline">{experience.map(item => <article key={item.company}><span className="date">{item.date}</span><div><h3>{item.role}</h3><strong>{item.company}</strong></div><p>{item.text}</p></article>)}</div>
     </section>
 
