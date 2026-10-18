@@ -55,7 +55,6 @@ const projects = [
 ];
 
 const experience = [
-  { date: "Aos 15 anos", role: "Primeiro trabalho", company: "Comércio de autopeças", text: "Comecei vendendo peças de carro para ajudar meus pais. Foi ali que aprendi cedo sobre responsabilidade, atendimento e o valor de construir meu próprio caminho." },
   { date: "Início na área", role: "Estagiário de TI", company: "Prefeitura de São José dos Campos", text: "Meu interesse por tecnologia e sistemas virou profissão quando conquistei uma oportunidade de estágio e passei a viver, na prática, a rotina da área de TI." },
   { date: "2021 — 2024", role: "Técnico de TI", company: "Sphere International School", text: "Suporte a usuários, redes LAN/WAN, manutenção, inventário e implantação de equipamentos." },
   { date: "2024 — 2025", role: "Analista de Suporte Jr.", company: "Neo Company", text: "Suporte a clientes, infraestrutura de software, manutenção e atendimento remoto." },
@@ -107,7 +106,7 @@ export default function Home() {
     </section>
 
     <section className="experience" id="experiencia">
-      <div className="trajectoryIntro"><span className="sectionNumber">02 / TRAJETÓRIA</span><p>Comecei a trabalhar aos 15 anos, vendendo peças de carro para ajudar meus pais. Nesse caminho, fui descobrindo meu interesse por tecnologia e sistemas. Minha entrada na área aconteceu como estagiário na Prefeitura de São José dos Campos; depois, cresci como técnico de TI e segui evoluindo até me tornar Analista de Sistemas.</p></div>
+      <div className="trajectoryIntro"><span className="sectionNumber">02 / TRAJETÓRIA</span><p>Comecei a trabalhar aos 15 anos para ajudar meus pais. Com o tempo, descobri na tecnologia um caminho com o qual realmente me identificava. Minha trajetória em TI começou como estagiário na Prefeitura de São José dos Campos e evoluiu, passo a passo, até a função de Analista de Sistemas.</p></div>
       <div className="timeline">{experience.map(item => <article key={item.company}><span className="date">{item.date}</span><div><h3>{item.role}</h3><strong>{item.company}</strong></div><p>{item.text}</p></article>)}</div>
     </section>
 
